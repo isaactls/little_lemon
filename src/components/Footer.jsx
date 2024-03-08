@@ -1,8 +1,13 @@
 const Footer = () => {
   return (
     <footer>
-      <ul>
-        <img src="" alt="" />
+      <div className="row">
+      <div className="footer-wrapper">
+        <ul>
+          <li>
+            <img src="" alt="image" />
+          </li>
+        </ul>
         <ul>
           <li>Dormant Navigation</li>
           <li>Home</li>
@@ -24,7 +29,8 @@ const Footer = () => {
             <li>Insagram</li>
             <li>Tiktok</li>
         </ul>
-      </ul>
+        </div>
+      </div>
     </footer>
   );
 };

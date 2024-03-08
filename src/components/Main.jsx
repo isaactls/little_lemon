@@ -1,7 +1,9 @@
 const Main = () => {
     return(
         <main>
-            main
+            <div className="row">
+                
+            </div>
         </main>
     )
 }
