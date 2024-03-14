@@ -5,7 +5,7 @@ const Footer = () => {
       <div className="footer-wrapper">
         <ul>
           <li>
-            <img src="" alt="image" />
+            <img src="" alt="Logo" />
           </li>
         </ul>
         <ul>

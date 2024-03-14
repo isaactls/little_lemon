@@ -1,0 +1,111 @@
+.active {
+  border-bottom: 4px solid;
+}
+.nav-wrapper {
+  display: grid;
+  place-items: center;
+}
+.nav-items-wrapper {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+  flex-wrap: wrap;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+}
+.nav-item {
+  color: var(--secondary-four);
+}
+.nav-item::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  border-bottom: solid;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+}
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+.hamburger-icon {
+  width: 30px;
+  height: 19px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-45%);
+}
+
+.hamburger-icon span:nth-child(3) {
+  bottom: 0;
+}
+.hamburger-icon.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-icon.open span:nth-child(2) {
+  transform: translateX(2000px);
+}
+.hamburger-icon.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-40deg);
+}
+
+@media (max-width: 934px) {
+  .nav-items-wrapper {
+    column-gap: 8px;
+  }
+}
+@media (max-width: 892px){
+  .nav-wrapper{
+    position: relative;
+  }
+  .nav-wrapper *{
+    padding: 0;
+    margin: 0;
+  }
+  .nav-items-wrapper{
+    top: 40px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    max-height: 300px;
+    width: 250px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+  }
+  .nav-item{
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 2px;
+    background-color: var(--secondary-three);
+    border-radius: 5px;
+  }
+}
+
