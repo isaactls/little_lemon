@@ -26,7 +26,6 @@ const CTA = () => {
             </p>
             <button>Reserve a table</button>
           </div>
-          
             <figure className="cta-image">
               <img
                 src={restaurantfood}
@@ -34,7 +33,6 @@ const CTA = () => {
                 style={{ width: "300px", height: "380px" }}
               />
             </figure>
-          
         </div>
       </div>
     </section>

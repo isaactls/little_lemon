@@ -21,7 +21,6 @@ function App() {
       <Route path='/Order_Online' element={<OrderOnline />}/>
       <Route path='/Reservation' element={<Reservation />}/>
     </Routes>
-    <Main />
     <Footer />
     </>
   );

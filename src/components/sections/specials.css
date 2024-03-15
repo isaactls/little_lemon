@@ -1,4 +1,5 @@
 .special-container{
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     margin-top: 16px;
@@ -82,6 +83,7 @@
     .special-title{
         flex-direction: column;
         align-items: center;
+        row-gap: 32px;
     }
 }
 @media(max-width : 480px){

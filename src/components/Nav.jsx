@@ -14,7 +14,7 @@ const Nav = () => {
     };
   }, []);
   const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => {
+  const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
   return (
@@ -53,7 +53,7 @@ const Nav = () => {
           </li>
         </ul>
       ) : (
-        <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} onClick={toggle}>
+        <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu} >
           <span></span>
           <span></span>
           <span></span>

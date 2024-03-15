@@ -16,6 +16,7 @@
   text-decoration: none;
   list-style: none;
   text-align: center;
+  scroll-behavior: smooth;
 }
 body{
   font-family: "Karla", sans-serif;
@@ -43,19 +44,33 @@ section:nth-child(odd){
   display: flex;
   justify-content: space-between;
 }
-.header-container > img{
-  width: 240px;
+.header-container img{
+  width: 220px;
+}
+.home-logo-link{
+  width: auto;
+  height: auto;
 }
 section{
   margin-bottom: 64px;
 }
+footer{
+  background-color: var(--secondary-four);
+  color: white;
+}
+.footer-list-title{
+  color: var(--primary-yellow);
+  font-weight: bolde;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
 .footer-wrapper{
+  margin: 36px 0;
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: auto;
   row-gap: 23px;
 }
-
 .footer-wrapper > ul li{
 text-align: left;
 }

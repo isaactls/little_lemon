@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 64px 0;
-    min-height: 700px;
+    min-height: 100vh;
 }
 .testimonial-card-container{
     display: flex;
@@ -51,6 +51,7 @@
 .testimonial-title{
     color: var(--primary-yellow);
     font-size: 32px;
+    margin-bottom: 32px;
 }
 .load{
     font-size: 48px;

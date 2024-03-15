@@ -9,7 +9,7 @@ const Footer = () => {
           </li>
         </ul>
         <ul>
-          <li>Dormant Navigation</li>
+          <li className="footer-list-title">Dormant Navigation</li>
           <li>Home</li>
           <li>About</li>
           <li>Menu</li>
@@ -18,13 +18,13 @@ const Footer = () => {
           <li>Login</li>
         </ul>
         <ul>
-          <li>Contact</li>
+          <li className="footer-list-title">Contact</li>
           <li>Address</li>
           <li>Phone number</li>
           <li>Email</li>
         </ul>
         <ul>
-            <li>Social Media Link</li>
+            <li className="footer-list-title">Social Media Link</li>
             <li>Facebook</li>
             <li>Insagram</li>
             <li>Tiktok</li>
