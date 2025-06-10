@@ -1,6 +1,9 @@
+import React from 'react'
+
 const Menu = () => {
-    return (<>
-    menu
-    </>)
+  return (
+    <div>Menu</div>
+  )
 }
-export default Menu;
+
+export default Menu

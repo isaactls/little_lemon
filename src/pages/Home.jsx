@@ -1,12 +1,13 @@
 import React from 'react'
-import CTA from '../components/sections/CTA'
+import Hero from '../components/sections/Hero'
 import Specials from '../components/sections/Specials'
 import Testimonials from '../components/sections/Testimonials'
 import Chicago from '../components/sections/Chicago'
+
 const Home = () => {
   return (
     <main>
-      <CTA />
+      <Hero />
       <Specials />
       <Testimonials />
       <Chicago />
@@ -14,4 +15,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

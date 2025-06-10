@@ -1,3 +1,4 @@
+import Logo from '../assets/images/Logo.png'
 const Footer = () => {
   return (
     <footer>
@@ -5,7 +6,7 @@ const Footer = () => {
       <div className="footer-wrapper">
         <ul>
           <li>
-            <img src="" alt="Logo" />
+            <img src={Logo} alt="Logo" style={{width: '100px'}}/>
           </li>
         </ul>
         <ul>

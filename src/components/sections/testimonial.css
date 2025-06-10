@@ -58,6 +58,36 @@
     color: white;
     margin: auto;
 }
+.load-dot{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    animation: loading-animation 1s infinite ease-in-out;
+    margin: 0 2px;
+}
+.dot-1{
+    animation-delay: 0s;
+}
+.dot-2{
+    animation-delay: 0.3s;
+}
+.dot-3{
+    animation-delay: 0.6s;
+}
+
+@keyframes loading-animation{
+    0%{
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 @media(max-width : 1024px){
 
 }

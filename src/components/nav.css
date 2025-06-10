@@ -58,7 +58,7 @@
 
 .hamburger-icon span:nth-child(2) {
   top: 50%;
-  transform: translateY(-45%);
+  transform: translateY(-50%);
 }
 
 .hamburger-icon span:nth-child(3) {
@@ -77,11 +77,16 @@
 @media (max-width: 934px) {
   .nav-items-wrapper {
     column-gap: 8px;
+    z-index: 2;
   }
 }
 @media (max-width: 892px){
   .nav-wrapper{
     position: relative;
+  }
+  .hamburger-icon > span{
+    position: absolute;
+    right: 0;
   }
   .nav-wrapper *{
     padding: 0;
@@ -100,7 +105,6 @@
     flex-wrap: nowrap;
   }
   .nav-item{
-    position: relative;
     padding: 10px 0;
     margin-bottom: 2px;
     background-color: var(--secondary-three);
@@ -113,7 +117,6 @@
     color: white;
   }
   .active{
-    border-bottom: hidden;
     background-color: var(--primary-blue);
     color: white;
   }

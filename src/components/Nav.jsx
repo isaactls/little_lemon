@@ -17,6 +17,7 @@ const Nav = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
   return (
     <nav className="nav-wrapper">
       {windowwidth > 892 ? (
