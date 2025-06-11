@@ -3,6 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="row">
+      <strong>developed by Yisehak</strong>
       <div className="footer-wrapper">
         <ul>
           <li>
