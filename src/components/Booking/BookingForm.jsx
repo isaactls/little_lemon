@@ -4,6 +4,7 @@ const BookingForm = () => {
   const initialState = {time : '17:00'}
   const [date, setDate] = useState(null);
   const [dateError, setDateError] = useState("");
+  const [isBookingSuccessful, setIsBookingSuccessful] = useState(false);
   const [availableTimes, setAvailableTimes] = useState([
     "17:00",
     "18:00",
@@ -30,8 +31,10 @@ const BookingForm = () => {
     e.preventDefault();
     if (!date) {
       setDateError("Please select a date");
+      setIsBookingSuccessful(false);
     } else {
       setDateError("");
+      setIsBookingSuccessful(true);
       // Handle form submission logic here
       console.log("Form submitted successfully");
     }
@@ -95,6 +98,18 @@ const BookingForm = () => {
           </select>
         </fieldset>
         <input type="submit" value="Make Your Reservation" style={{ fontFamily: '"Karla", sans-serif', fontSize: "18px", fontWeight: "bold", backgroundColor: "#F4CE14", color: "#333333", border: "none", borderRadius: "12px", padding: "14px", width: "100%", cursor: "pointer", marginTop: "10px" }} />
+        {isBookingSuccessful && (
+          <p style={{
+            fontFamily: '"Karla", sans-serif',
+            color: 'green',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginTop: '20px'
+          }}>
+            Successfully reserved!
+          </p>
+        )}
       </form>
     </>
   );
