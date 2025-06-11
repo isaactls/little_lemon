@@ -3,6 +3,7 @@ import { useState } from "react";
 const BookingForm = () => {
   const initialState = {time : '17:00'}
   const [date, setDate] = useState(null);
+  const [dateError, setDateError] = useState("");
   const [availableTimes, setAvailableTimes] = useState([
     "17:00",
     "18:00",
@@ -25,9 +26,20 @@ const BookingForm = () => {
   const handleOccasion = (e) => {
     setOccasion(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!date) {
+      setDateError("Please select a date");
+    } else {
+      setDateError("");
+      // Handle form submission logic here
+      console.log("Form submitted successfully");
+    }
+  };
   return (
     <>
       <form
+        onSubmit={handleSubmit}
         action=""
         style={{
           display: "grid",
@@ -39,6 +51,7 @@ const BookingForm = () => {
         <fieldset>
           <label htmlFor="res-date">choose date</label>
           <input type="date" id="res-date" value={date} onChange={handleDate} />
+          {dateError && <p style={{ color: "red" }}>{dateError}</p>}
           <label htmlFor="res-time">choose time</label>
           <select id="res-time" value={selectedTime} onChange={handleTime}>
             {availableTimes.map((timeOption, index) => {
