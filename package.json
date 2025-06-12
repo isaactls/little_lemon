@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 { "homepage": "https://isaactls.github.io/little_lemon/",
+=======
+{
+  "homepage": "https://isaactls.github.io/lgh auth loginittle_lemon/",
+>>>>>>> 5703d0940171435e9ab5e9eb8b6648bb1b35dd42
   "name": "little-lemon",
   "version": "0.1.0",
   "private": true,
@@ -37,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
