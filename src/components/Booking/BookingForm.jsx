@@ -3,6 +3,8 @@ import { useState } from "react";
 const BookingForm = () => {
   const initialState = {time : '17:00'}
   const [date, setDate] = useState(null);
+  const [dateError, setDateError] = useState("");
+  const [isBookingSuccessful, setIsBookingSuccessful] = useState(false);
   const [availableTimes, setAvailableTimes] = useState([
     "17:00",
     "18:00",
@@ -25,22 +27,41 @@ const BookingForm = () => {
   const handleOccasion = (e) => {
     setOccasion(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!date) {
+      setDateError("Please select a date");
+      setIsBookingSuccessful(false);
+    } else {
+      setDateError("");
+      setIsBookingSuccessful(true);
+      // Handle form submission logic here
+      console.log("Form submitted successfully");
+    }
+  };
   return (
     <>
       <form
+        onSubmit={handleSubmit}
         action=""
         style={{
           display: "grid",
-          maxWidth: "200px",
+          maxWidth: "600px",
           gap: "20px",
-          margin: "auto",
+          margin: "40px auto",
+          padding: "30px",
+          backgroundColor: "#EDEFEE",
+          borderRadius: "16px",
+          boxShadow: "0px 8px 16px rgba(0,0,0,0.1)",
+          fontFamily: '"Karla", sans-serif',
         }}
       >
-        <fieldset>
-          <label htmlFor="res-date">choose date</label>
-          <input type="date" id="res-date" value={date} onChange={handleDate} />
-          <label htmlFor="res-time">choose time</label>
-          <select id="res-time" value={selectedTime} onChange={handleTime}>
+        <fieldset style={{ border: "none", padding: "0", margin: "0", display: "flex", flexDirection: "column" }}>
+          <label htmlFor="res-date" style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", color: "#495E59", fontWeight: "bold", textAlign: "left", marginBottom: "8px" }}>choose date</label>
+          <input type="date" id="res-date" value={date} onChange={handleDate} style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", padding: "12px", border: "1px solid #ccc", borderRadius: "8px", width: "100%", boxSizing: "border-box", marginBottom: "10px" }} />
+          {dateError && <p style={{ fontFamily: '"Karla", sans-serif', color: "red", fontSize: "14px", textAlign: "left", marginTop: "-10px", marginBottom: "10px" }}>{dateError}</p>}
+          <label htmlFor="res-time" style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", color: "#495E59", fontWeight: "bold", textAlign: "left", marginBottom: "8px" }}>choose time</label>
+          <select id="res-time" value={selectedTime} onChange={handleTime} style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", padding: "12px", border: "1px solid #ccc", borderRadius: "8px", width: "100%", boxSizing: "border-box", marginBottom: "10px" }}>
             {availableTimes.map((timeOption, index) => {
               return (
                 <option key={index} value={timeOption}>
@@ -50,8 +71,8 @@ const BookingForm = () => {
             })}
           </select>
         </fieldset>
-        <fieldset>
-          <label htmlFor="guests">Number of Guests</label>
+        <fieldset style={{ border: "none", padding: "0", margin: "0", display: "flex", flexDirection: "column" }}>
+          <label htmlFor="guests" style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", color: "#495E59", fontWeight: "bold", textAlign: "left", marginBottom: "8px" }}>Number of Guests</label>
           <input
             type="number"
             min={1}
@@ -60,21 +81,35 @@ const BookingForm = () => {
             value={guestNumber}
             placeholder="1"
             onChange={handleGuest}
+            style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", padding: "12px", border: "1px solid #ccc", borderRadius: "8px", width: "100%", boxSizing: "border-box", marginBottom: "10px" }}
           />
         </fieldset>
-        <fieldset>
-          <label htmlFor="occasion">Occasion</label>
+        <fieldset style={{ border: "none", padding: "0", margin: "0", display: "flex", flexDirection: "column" }}>
+          <label htmlFor="occasion" style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", color: "#495E59", fontWeight: "bold", textAlign: "left", marginBottom: "8px" }}>Occasion</label>
           <select
             name="occasion"
             id="occasion"
             value={occasion}
             onChange={handleOccasion}
+            style={{ fontFamily: '"Karla", sans-serif', fontSize: "16px", padding: "12px", border: "1px solid #ccc", borderRadius: "8px", width: "100%", boxSizing: "border-box", marginBottom: "10px" }}
           >
             <option value="">Birthday</option>
             <option value="">Anniversary</option>
           </select>
         </fieldset>
-        <input type="submit" value="Make Your Reservation" />
+        <input type="submit" value="Make Your Reservation" style={{ fontFamily: '"Karla", sans-serif', fontSize: "18px", fontWeight: "bold", backgroundColor: "#F4CE14", color: "#333333", border: "none", borderRadius: "12px", padding: "14px", width: "100%", cursor: "pointer", marginTop: "10px" }} />
+        {isBookingSuccessful && (
+          <p style={{
+            fontFamily: '"Karla", sans-serif',
+            color: 'green',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginTop: '20px'
+          }}>
+            Successfully reserved!
+          </p>
+        )}
       </form>
     </>
   );
