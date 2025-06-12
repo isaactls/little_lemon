@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
-import bruchetta from "../../assets/images/bruchetta.svg";
+import bruchetta from "../../assets/images/bruchetta.webp";
 import greeksalad from "../../assets/images/greek salad.jpg";
 import lemondessert from "../../assets/images/lemon dessert.jpg";
 import "./specials.css";
