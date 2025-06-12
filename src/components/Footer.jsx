@@ -3,11 +3,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="row">
-<<<<<<< HEAD
-      <strong>developed by Yisehak</strong>
-=======
+
         <strong>Developed By Yisehak</strong>
->>>>>>> 5703d0940171435e9ab5e9eb8b6648bb1b35dd42
+
       <div className="footer-wrapper">
         <ul>
           <li>
